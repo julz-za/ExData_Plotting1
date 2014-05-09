@@ -40,7 +40,7 @@ with(date_ss, plot(as.POSIXct(paste(date_ss$Date, as.character(date_ss$Time))), 
                    ylim = c(0, 40)
                    
 )) ## create a blank plot
-legend("topright", col=c("black", "red", "blue"), lwd=c(1, 1, 1), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3")) 
+legend("topright", text.width = 58000, col=c("black", "red", "blue"), lwd=c(1, 1, 1), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3")) 
 lines(as.POSIXct(paste(date_ss$Date, as.character(date_ss$Time))), date_ss$Sub_metering_1, col="black")
 lines(as.POSIXct(paste(date_ss$Date, as.character(date_ss$Time))), date_ss$Sub_metering_2, col="red")
 lines(as.POSIXct(paste(date_ss$Date, as.character(date_ss$Time))), date_ss$Sub_metering_3, col="blue")
