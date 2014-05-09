@@ -33,7 +33,7 @@ date_ss[num_cols]<-lapply(date_ss[num_cols], as.numeric)
 date_ss$Energy_Sub_Metering<-rowSums(date_ss[,c(7:9)])
 
 ## Plot 4 GAP, Voltage, Energy sub metering, Global_reactive_power
-par(mfrow=c(2, 2), mar=c(4, 5, 4, 4))  
+par(mfrow=c(2, 2), mar=c(5, 4, 4, 2))  
 with(date_ss, {
         
         ## plot 4.1 top left
@@ -56,14 +56,14 @@ with(date_ss, {
                            
         )) 
         
-        legend("topright", bty = "n", cex = 0.8, col=c("black", "red", "blue"), lwd=c(1, 1, 1), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3")) 
+        legend("topright", inset = c(0.05, 0), bty = "n", cex = 0.4, col=c("black", "red", "blue"), lwd=c(1, 1, 1), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3")) 
         lines(as.POSIXct(paste(date_ss$Date, as.character(date_ss$Time))), date_ss$Sub_metering_1, col="black")
         lines(as.POSIXct(paste(date_ss$Date, as.character(date_ss$Time))), date_ss$Sub_metering_2, col="red")
         lines(as.POSIXct(paste(date_ss$Date, as.character(date_ss$Time))), date_ss$Sub_metering_3, col="blue")
         
         ## plot 4.4 bottom right
         with(date_ss, plot(as.POSIXct(paste(date_ss$Date, as.character(date_ss$Time))), Global_reactive_power, type="l", 
-                           xlab = "datetime"
+                           xlab = "datetime", lwd=0.4
                            
         ))
         
